@@ -1,0 +1,20 @@
+.cell {
+    // border: 1px solid black;
+    @include flex(1 0 0);
+
+    &.alive {
+        background-color: blue;
+    }
+
+    &.newborn {
+        background-color: green;
+    }
+
+    &.dying {
+        background-color: red;
+    }
+
+    &.oneshot {
+        background-color: yellow;
+    }
+}

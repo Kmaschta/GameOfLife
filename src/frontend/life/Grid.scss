@@ -1,0 +1,11 @@
+.grid {
+    border: 1px solid black;
+
+    @include display-flex();
+    @include flex-direction(column);
+
+    .column {
+        @include flex(1 0 0);
+        @include display-flex();
+    }
+}
