@@ -1,11 +1,16 @@
 .grid {
-    border: 1px solid black;
+    .cell-container {
+        margin: auto;
+        border: 1px solid black;
+        width: 35rem;
+        height: 35rem;
 
-    @include display-flex();
-    @include flex-direction(column);
-
-    .column {
-        @include flex(1 0 0);
         @include display-flex();
+        @include flex-direction(column);
+
+        .column {
+            @include flex(1 0 0);
+            @include display-flex();
+        }
     }
 }

@@ -1,5 +1,4 @@
 .cell {
-    // border: 1px solid black;
     @include flex(1 0 0);
 
     &.alive {

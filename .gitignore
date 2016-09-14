@@ -1,2 +1,10 @@
+# JavaScript
 node_modules/
 build/*
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Docker
+src/backend/postgres

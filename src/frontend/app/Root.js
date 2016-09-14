@@ -1,35 +1,16 @@
-/* eslint-disable max-len */
-import React from 'react';
-import Grid from '../life/Grid';
+import React, { PropTypes } from 'react';
+import { Provider } from 'react-redux';
 
-const states = ['empty', 'alive', 'newborn', 'dying', 'oneshot'];
+import App from './App';
 
-const cell = () => ({ state: states[Math.floor(Math.random() * states.length)] });
-const columns = [
-    [cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell()],
-    [cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell()],
-    [cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell()],
-    [cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell()],
-    [cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell()],
-    [cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell()],
-    [cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell()],
-    [cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell()],
-    [cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell()],
-    [cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell()],
-    [cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell()],
-    [cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell()],
-    [cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell()],
-    [cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell()],
-    [cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell()],
-    [cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell()],
-    [cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell()],
-    [cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell()],
-    [cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell()],
-    [cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell()],
-    [cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell()],
-    [cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell(), cell()],
-];
+const Root = ({ store }) => (
+    <Provider {...{ store }}>
+        <App />
+    </Provider>
+);
 
-const Root = () => <Grid columns={columns} />;
+Root.propTypes = {
+    store: PropTypes.object.isRequired,
+};
 
 export default Root;

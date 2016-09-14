@@ -5,8 +5,8 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 export default {
     entry: {
         index: [
-            `${__dirname}/src/frontend/app/main.js`,
-            `${__dirname}/src/frontend/app/main.scss`,
+            `${__dirname}/src/frontend/main.js`,
+            `${__dirname}/src/frontend/main.scss`,
         ],
     },
     module: {
@@ -36,7 +36,6 @@ export default {
         publicPath: '/',
     },
     plugins: [
-        // @TODO: Add webpack.DefinePlugin to define config
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: `${__dirname}/src/frontend/index.html`,
